@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<transfers xmlns="spryker:transfer-01"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xsd">
+
+  <transfer name="Antelope">
+    <property name="idAntelope" type="int" />
+    <property name="name" type="string" />
+  </transfer>
+
+</transfers>
+
+<!--First, copy and paste the code above to create the definition file for an antelope.
+
+Place the definition file in the following location:
+
+src/Pyz/Shared/Training/Transfer/training.transfer.xml-->
+
+<!-- Generate PHP Class
+Execute the following console command to fetch the definition file and create a PHP class out of it.
+
+docker/sdk console transfer:generate
+
+If successful, you should see the auto-generated file in the following file path:
+
+src/Generated/Shared/Transfer/AntelopeTransfer.php
+
+-->

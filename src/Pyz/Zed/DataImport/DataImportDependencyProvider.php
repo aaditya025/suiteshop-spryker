@@ -7,6 +7,9 @@
 
 namespace Pyz\Zed\DataImport;
 
+use Pyz\Zed\AntelopeDataImport\Communication\Plugin\DataImport\AntelopeDataImportPlugin;
+
+
 use Pyz\Zed\MerchantProductOfferDataImport\Communication\Plugin\CombinedMerchantProductOfferDataImportPlugin;
 use Pyz\Zed\MerchantProductOfferDataImport\Communication\Plugin\CombinedMerchantProductOfferStoreDataImportPlugin;
 use Pyz\Zed\PriceProductOfferDataImport\Communication\Plugin\CombinedPriceProductOfferDataImportPlugin;
@@ -304,6 +307,9 @@ class DataImportDependencyProvider extends SprykerDataImportDependencyProvider
     protected function getDataImporterPlugins(): array
     {
         return [
+            
+            new AntelopeDataImportPlugin(),
+            
             new StoreDataImportPlugin(),
             new CountryStoreDataImportPlugin(),
             new CurrencyStoreDataImportPlugin(),

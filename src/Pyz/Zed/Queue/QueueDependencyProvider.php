@@ -7,6 +7,8 @@
 
 namespace Pyz\Zed\Queue;
 
+use Pyz\Shared\AntelopeSearch\AntelopeSearchConfig;
+
 use Spryker\Shared\AssetStorage\AssetStorageConfig;
 use Spryker\Shared\AvailabilityStorage\AvailabilityStorageConfig;
 use Spryker\Shared\AvailabilityStorage\AvailabilityStorageConstants;
@@ -69,6 +71,10 @@ class QueueDependencyProvider extends SprykerDependencyProvider
     protected function getProcessorMessagePlugins(Container $container): array
     {
         return [
+
+            AntelopeSearchConfig::ANTELOPE_PUBLISH_SEARCH_QUEUE => new Pyz\Zed\Queue\EventQueueMessageProcessorPlugin(),
+            AntelopeSearchConfig::ANTELOPE_SYNC_SEARCH_QUEUE => new Pyz\Zed\Queue\SynchronizationSearchQueueMessageProcessorPlugin(),
+
             EventConstants::EVENT_QUEUE => new EventQueueMessageProcessorPlugin(),
             EventConstants::EVENT_QUEUE_RETRY => new EventRetryQueueMessageProcessorPlugin(),
             PublisherConfig::PUBLISH_QUEUE => new EventQueueMessageProcessorPlugin(),

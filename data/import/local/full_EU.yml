@@ -3,6 +3,8 @@ version: 0
 
 actions:
     #1. Commerce Setup data import
+    - data_entity: antelope
+      source: data/import/local/common/antelope.csv
     - data_entity: store
       source: data/import/common/EU/store.csv
     - data_entity: currency

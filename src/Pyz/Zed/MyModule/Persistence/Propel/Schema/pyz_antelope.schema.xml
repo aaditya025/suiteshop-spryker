@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="zed"
+xsi:noNamespaceSchemaLocation="http://static.spryker.com/schema-01.xsd"
+namespace="Orm\Zed\Antelope\Persistence"
+package="src.Orm.Zed.Antelope.Persistence">
+
+  <table name="pyz_antelope" idMethod="native" allowPkInsert="true"
+phpName="PyzAntelope">
+
+    <column name="id_antelope" required="true" type="INTEGER" 
+    primaryKey="true" autoIncrement="true"/>
+    <column name="name" required="true" type="VARCHAR" size="255"/>
+      
+      <unique name="pyz_antelope-name">
+        <unique-column name="name"/>
+      </unique>
+      
+      <id-method-parameter value="pyz_antelope_pk_seq"/>
+      
+</table>
+</database>
+
+<!--First, copy and paste the code above to create a new schema file in the persistence layer of a Zed-module.
+
+Place the definition file in the following location:
+
+src/Pyz/Zed/Training/Persistence/Propel/Schema/pyz_antelope.schema.xml-->
+
+<!--Create an entity representation and the related table structure.
+Execute the following console command to fetch the definition file, and auto generate the PHP class and the matching table in the database.
+
+docker/sdk console propel:install-->
+
+<!--Confirm your work.
+Use a tool of your choice to access the database and find the pyz_antelope table with two columns:
+id_antelope and name.
+
+You should also be able to locate the entity in the following directory and its subfolders:
+
+src/Orm/Zed/Antelope/Persistence/-->
